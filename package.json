@@ -3,6 +3,13 @@
   "displayName": "Color Highlighter for CSS hsl variables",
   "description": "This extension shows the color of css variable even in the specific case where the vaiable isn't wrapped in `hsl()`.",
   "version": "0.0.1",
+  "author": {
+    "name": "masontuttle",
+    "url": "https://github.com/Skiffy106/"
+  },
+  "repository": {
+    "url": "https://github.com/Skiffy106/color-highlighter-css-hsl-variables"
+  },
   "engines": {
     "vscode": "^1.97.0"
   },
