@@ -1,6 +1,6 @@
 # color-highlighter-css-hsl-variables
 
-This is a lightweight, opensource soultion for providing color picking for css vaiables in the hsl format
+This is a lightweight, **Open Source** soultion for providing color picking for css vaiables in the hsl format
 
 ## Features
 
