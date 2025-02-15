@@ -88,10 +88,10 @@ export function activate(context: vscode.ExtensionContext) {
 		provideDocumentColors(document: vscode.TextDocument): vscode.ColorInformation[] {
 			const colorInformations: vscode.ColorInformation[] = [];
 			const text = document.getText();
+            //        matches: `--var-name:  130.2        50.3%      10.4%`
 			const colorRegex = /--[\w-]+:\s+\d+.?\d*?\s+\d+.?\d*?%\s+\d+.?\d*%/g;
 			let match;
 			while ((match = colorRegex.exec(text))) {
-				console.log(match);
 				let [varName, hueRaw, saturationRaw, lightnessRaw] = match[0].split(/\s+/);
 				const hue = parseFloat(hueRaw);
 				const saturation = parseFloat(saturationRaw.replace(/%$/, ""));
@@ -116,15 +116,6 @@ export function activate(context: vscode.ExtensionContext) {
 			return [colorPresentation];
 		}
 	});
-
-	let disposable = vscode.workspace.onDidOpenTextDocument((document: vscode.TextDocument) => {
-        if (document.languageId === 'css') {
-            const text = 'CSS file opened';
-            console.log(text);
-            vscode.window.showInformationMessage(text);
-        }
-    });
-	context.subscriptions.push(disposable);
 	context.subscriptions.push(provider);
 }
 
